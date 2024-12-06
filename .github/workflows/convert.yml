@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: Convert
-    runs-on: x86_64_latest
+    runs-on: macos_latest
     steps:
       - uses: actions/checkout@v4
       - name: Set values
@@ -17,7 +17,7 @@ jobs:
             [ $app_name ] && xcrun safari-web-extension-converter ./extension --project-location ./safari-extension --force --no-open --app-name "$app_name"
       - name: Build
         run: |
-            [ $app_name ] && xcodebuild -project "./safari-extension/$app_name/$app_name.xcodeproj" -scheme "$app_name (macOS)" -configuration Debug clean build CONFIGURATION_BUILD_DIR=./safari-extension-build
+            [ $app_name ] && xcodebuild -project "./safari-extension/$app_name/$app_name.xcodeproj" -scheme "$app_name (macOS)" -arch x86_64 -configuration Debug clean build CONFIGURATION_BUILD_DIR=./safari-extension-build
       - name: Prepare App for Upload
         run: |
             [ $app_name ] && /bin/mv "./safari-extension/$app_name/safari-extension-build/$app_name.app" ./build.app
