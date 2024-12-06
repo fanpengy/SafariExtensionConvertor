@@ -1,0 +1,24 @@
+{
+   "author": "vacabun",
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "js": [ "content_script.js" ],
+      "matches": [ "https://weibo.com/*", "https://www.weibo.com/*" ],
+      "run_at": "document_start"
+   } ],
+   "description": "一键下载微博视频/图片",
+   "homepage_url": "https://github.com/vacabun",
+   "icons": {
+      "128": "icon.png",
+      "16": "icon.png",
+      "48": "icon.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsl34PgnS+U/wnQc8L8KH0FflQsXSJHl6Tcc3prnTf8V6M7N82EfAMeFu/uA8FxF+n6sM4dRHzpMeG/lO8nVWYIE3g1ZZFdCaupuajP4VVPiGQpFO7vfhls4MAHzWwNA/Sjjm46bfezkyof7jNLNlGbMNIFnN1N2nUV/Z3LlVAXi7IDGX+L4lwCy4xNQocA7NZ8UfP/O0f5qSkwqi1eMxAnxIlyQ0hhZ2+YpdvJ6gbcB1AryxcH6UcjdSRfgqEx6WQ0EtYQREE1CxxFl1BfjlatMRjfJQjumHD8o3xJeNJ9XiA4tetaR6roAZjrSiYNNJ4bFxdQkm/EUhV8xAxn0I9wIDAQAB",
+   "manifest_version": 3,
+   "name": "weibo一键下载",
+   "permissions": [ "downloads" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.5"
+}
