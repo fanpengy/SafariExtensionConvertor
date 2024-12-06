@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: Convert
-    runs-on: x86_64_monterey
+    runs-on: x86_64_latest
     steps:
       - uses: actions/checkout@v4
       - name: Set values
