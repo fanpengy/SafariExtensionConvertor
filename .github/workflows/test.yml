@@ -1,0 +1,21 @@
+name: Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      ext_dir:
+        description: "extension directory"
+        required: true
+        default: "extension"
+jobs:
+  build:
+    name: Convert
+    runs-on: macos_latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set values
+        run: |
+            cat config >> "$GITHUB_ENV"
+      - name: Convert
+        run: |
+            echo "Running with parameter: ${{ github.event.inputs.ext_dir }}"
