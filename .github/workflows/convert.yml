@@ -1,7 +1,12 @@
 name: Convert
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      ext_dir:
+        description: "extension directory"
+        required: true
+        default: "extension"
 
 jobs:
   build:
