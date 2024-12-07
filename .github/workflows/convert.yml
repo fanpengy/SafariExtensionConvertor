@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     name: Convert
-    runs-on: ${{ fromJSON('["macos-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
+    runs-on: ${{ fromJSON('["macos-13", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
     steps:
       - uses: actions/checkout@v4
       - name: Set values
